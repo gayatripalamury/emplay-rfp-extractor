@@ -1,0 +1,45 @@
+{
+  "data": {
+    "bid_number": "#E20P4600040",
+    "title": "Dell Laptops w/Extended Warranty",
+    "due_date": null,
+    "bid_submission_type": "Electronic submission through eMaryland Marketplace Advantage (eMMA)",
+    "term_of_bid": null,
+    "pre_bid_meeting": null,
+    "installation": null,
+    "bid_bond_requirement": null,
+    "delivery_date": "within 45 days",
+    "payment_terms": null,
+    "additional_documentation_required": [
+      "Mercury Affidavit",
+      "Letter of Authorization if requested"
+    ],
+    "mfg_for_registration": null,
+    "contract_or_cooperative_to_use": null,
+    "model_no": "Dell Latitude 5550",
+    "part_no": "CC7802; WD22TB4",
+    "product": "Dell Latitude 5550 laptops and Dell Thunderbolt 4 Dock WD22TB4",
+    "contact_info": "Tamaira Hawkins Agency POC",
+    "company_name": "State of Maryland Treasurer's Office",
+    "bid_summary": "Purchase of Dell laptops and Thunderbolt docks under the Maryland Hardware Master Contract with a three-year warranty.",
+    "product_specification": "30 Dell Latitude 5550 laptops and 30 Dell Thunderbolt 4 docks; Microsoft Copilot ready; ENERGY STAR certified."
+  },
+  "sources": [
+    {
+      "source": "data\\input\\29f03e6b-7648-42ba-ba1d-37bb218d6e91-PORFP_-_Dell_Laptop_Final.pdf",
+      "page": 1
+    },
+    {
+      "source": "data\\input\\29f03e6b-7648-42ba-ba1d-37bb218d6e91-PORFP_-_Dell_Laptop_Final.pdf",
+      "page": 2
+    },
+    {
+      "source": "data\\input\\29f03e6b-7648-42ba-ba1d-37bb218d6e91-PORFP_-_Dell_Laptop_Final.pdf",
+      "page": 3
+    },
+    {
+      "source": "data\\input\\29f03e6b-7648-42ba-ba1d-37bb218d6e91-PORFP_-_Dell_Laptop_Final.pdf",
+      "page": 4
+    }
+  ]
+}

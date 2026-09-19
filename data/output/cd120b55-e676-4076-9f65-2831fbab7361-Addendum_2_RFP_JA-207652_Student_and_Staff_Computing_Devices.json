@@ -1,0 +1,30 @@
+{
+  "data": {
+    "bid_number": "JA-207652",
+    "title": "Student and Staff Computing Devices",
+    "due_date": "July 9, 2024 at 2:00 PM CST",
+    "bid_submission_type": null,
+    "term_of_bid": null,
+    "pre_bid_meeting": null,
+    "installation": null,
+    "bid_bond_requirement": null,
+    "delivery_date": null,
+    "payment_terms": null,
+    "additional_documentation_required": [],
+    "mfg_for_registration": "OEM",
+    "contract_or_cooperative_to_use": null,
+    "model_no": null,
+    "part_no": null,
+    "product": "Student Chromebooks, Windows laptops, tablets, desktops, and monitors",
+    "contact_info": null,
+    "company_name": "Dallas Independent School District",
+    "bid_summary": "Dallas ISD seeks student and staff computing devices with delivery, deployment, warranty, and asset-management requirements.",
+    "product_specification": null
+  },
+  "sources": [
+    {
+      "source": "data\\input\\cd120b55-e676-4076-9f65-2831fbab7361-Addendum 2 RFP JA-207652 Student and Staff Computing Devices.pdf",
+      "page": 1
+    }
+  ]
+}

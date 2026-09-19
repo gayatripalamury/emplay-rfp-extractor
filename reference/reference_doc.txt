@@ -1,0 +1,292 @@
+# Emplay Assignment Reference Doc
+
+# Assignment Reference Guide: Automated RFP Information Extraction with LLMs
+
+## 1. Objective
+
+The goal of this project is to build an automated data extraction pipeline capable of ingesting semi-structured and unstructured Request for Proposal (RFP) files (specifically in **PDF** and **HTML** formats) and converting them into a standardized, machine-readable **JSON format**.
+
+By utilizing modern Natural Language Processing (NLP) techniques and Large Language Models (LLMs), your program will accurately identify, extract, and normalize 20 specific procurement fields (such as Bid Number, Due Date, Submission Type, and Technical Specifications) regardless of differences in document layout or styling.
+
+## 2. Technical Requirements
+
+### 2.1 Hardware & Environment
+
+- **Operating System:** Windows 10/11, macOS, or Linux (Ubuntu 20.04+ recommended).
+- **RAM:** Minimum 8 GB (16 GB recommended if processing large PDF renderings locally).
+- **Disk Space:** At least 2 GB of free space.
+- **Python Version:** Python 3.10 to 3.12.
+
+### 2.2 Core Software & Libraries
+
+- **Document Parsing:**
+    - `pypdf` or `pdfplumber` or `pymupdf` (`fitz`) — for extracting clean text from PDF documents.
+    - `beautifulsoup4` (`bs4`) and `lxml` — for parsing HTML documents and stripping boilerplate tags.
+- **Data Modeling & Validation:**
+    - `pydantic` (v2.x) — to define strict schemas and enforce data validation for the output JSON.
+- **LLM Integration & Orchestration:**
+    - `openai`, `google-genai`, or `anthropic` client libraries (or framework wrappers like `langchain` / `instructor`).
+    - `python-dotenv` — to securely manage API keys and environment variables.
+
+### 2.3 External Credentials
+
+- An active API key with access to a structured-output-capable LLM (e.g., OpenAI API, Google Gemini API, or Anthropic API).
+
+## 3. Project Structure
+
+A modular, clean folder organization ensures your code is easy to debug, test, and package for submission.
+
+```
+rfp-extractor/
+│
+├── data/
+│   ├── input/
+│   │   ├── sample_bid_1.pdf
+│   │   └── sample_bid_2.html
+│   └── output/
+│       ├── sample_bid_1.json
+│       └── sample_bid_2.json
+│
+├── src/
+│   ├── __init__.py
+│   ├── config.py             # Environment configurations and global constants
+│   ├── parser.py             # Text extraction functions for HTML and PDF
+│   ├── schema.py             # Pydantic schema defining the 20 target fields
+│   ├── extractor.py          # LLM prompt construction and API invocation
+│   └── utils.py              # File I/O helpers and text cleaners
+│
+├── notebooks/
+│   └── exploration.ipynb     # Interactive experimentation notebook (optional)
+│
+├── .env.example              # Sample environment file for API keys
+├── .gitignore                # Files to ignore (e.g., .env, __pycache__, virtualenv)
+├── main.py                   # CLI entry point to run the pipeline
+├── README.md                 # Detailed execution and setup instructions
+└── requirements.txt          # Pinned dependencies
+```
+
+## 4. Step-by-Step Instructions
+
+### Step 1: Environment Setup & Virtual Environment
+
+1. Create a dedicated project directory and initialize a virtual environment:
+    
+    ```
+    python -m venv venv
+    ```
+    
+2. Activate the virtual environment:
+    - **Windows:** `venv\Scripts\activate`
+    - **macOS/Linux:** `source venv/bin/activate`
+3. Create a `.env` file containing your credentials (e.g., `OPENAI_API_KEY="your-key-here"` or `GEMINI_API_KEY="your-key-here"`).
+4. Install the required dependencies using `pip`.
+
+### Step 2: Document Ingestion and Text Extraction
+
+Documents come in two formats that require distinct parsing strategies:
+
+1. **HTML Documents:**
+    - Use `BeautifulSoup` with `lxml`.
+    - Strip non-content tags: `<script>`, `<style>`, `<nav>`, `<footer>`, `<header>`, and `<meta>`.
+    - Preserve structural whitespace so tabular or list-based data remains readable to the model.
+2. **PDF Documents:**
+    - Use `pdfplumber` or `pymupdf`.
+    - Iterate page by page to pull clean text blocks.
+    - If tables exist, check if your extractor preserves cell boundaries or extract tables into formatted text/markdown.
+
+### Step 3: Defining the Data Schema
+
+Define a strict data contract mapping directly to the 20 fields requested in the specification:
+
+| # | Field Name | Expected Description |
+| --- | --- | --- |
+| 1 | `bid_number` | Unique identifier / reference number of the bid |
+| 2 | `title` | Official RFP or project title |
+| 3 | `due_date` | Date and time deadline for submission |
+| 4 | `bid_submission_type` | Electronic, sealed envelope, portal link, etc. |
+| 5 | `term_of_bid` | Duration or contract length (e.g., "1 Year with renewal") |
+| 6 | `pre_bid_meeting` | Date, time, location, or whether it is mandatory |
+| 7 | `installation` | Details on whether installation is required / scope |
+| 8 | `bid_bond_requirement` | Required bond percentage, flat amount, or "None" |
+| 9 | `delivery_date` | Required delivery timeframe or specific target date |
+| 10 | `payment_terms` | Terms (e.g., Net 30, milestone billing) |
+| 11 | `additional_documentation_required` | Certifications, licenses, W-9, references, etc. |
+| 12 | `mfg_for_registration` | Specific manufacturer required for partner registration |
+| 13 | `contract_or_cooperative_to_use` | Purchasing contracts (e.g., Omnia, Sourcewell, GSA) |
+| 14 | `model_no` | Target product model numbers specified |
+| 15 | `part_no` | Target part or SKU numbers |
+| 16 | `product` | Primary item, service, or commodity requested |
+| 17 | `contact_info` | Procurement officer name, email, and phone |
+| 18 | `company_name` | Issuing authority, agency, or municipality |
+| 19 | `bid_summary` | Brief 2-3 sentence overview of the project scope |
+| 20 | `product_specification` | Detailed technical criteria, dimensions, or standards |
+
+### Step 4: LLM Context Handling & Prompt Engineering
+
+- **Context Window Check:** Calculate text length before sending to the model. If a document is under the token limit of modern models (e.g., 100k+ tokens for Gemini 1.5 or GPT-4o), pass the cleaned text directly.
+- **Handling Large Documents (Chunking / RAG):** If documents exceed limits, apply a chunking strategy or split by sections (e.g., Scope of Work, Instructions to Bidders).
+- **System Prompt Rules:**
+    - Instruct the model to return `null` or `"Not Specified"` if a field cannot be found in the document.
+    - Instruct the model **never to hallucinate** or infer unstated figures.
+    - Require direct extraction where applicable (e.g., model numbers, bid codes).
+
+### Step 5: Structured Data Extraction & Parsing
+
+Use structured outputs (such as JSON Mode or Pydantic Function Calling) to guarantee that the LLM response adheres strictly to your schema without syntax errors.
+
+### Step 6: Post-Processing and JSON Export
+
+1. Parse the LLM's response into a Python dictionary.
+2. Validate that all 20 keys are present.
+3. Save the result to a formatted JSON file: `data/output/<filename>.json`.
+
+### Step 7: Validation and Edge Case Testing
+
+- Run test documents containing missing fields to ensure the extractor handles missing data gracefully without raising exceptions.
+- Verify addendum documents (e.g., files modifying the original due date) to ensure updated values take precedence if multiple files are processed together.
+
+## 5. Example Code Snippets
+
+### 5.1 Document Parser (`src/parser.py`)
+
+```
+from pathlib import Path
+from bs4 import BeautifulSoup
+import pdfplumber
+
+def parse_html(file_path: Path) -> str:
+    """Extract clean, structured text from an HTML file."""
+    with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
+        soup = BeautifulSoup(f.read(), "lxml")
+
+    # Remove irrelevant tags
+    for tag in soup(["script", "style", "nav", "footer", "noscript"]):
+        tag.decompose()
+
+    return soup.get_text(separator="\n", strip=True)
+
+def parse_pdf(file_path: Path) -> str:
+    """Extract clean text page-by-page from a PDF file."""
+    extracted_text = []
+    with pdfplumber.open(file_path) as pdf:
+        for page in pdf.pages:
+            text = page.extract_text()
+            if text:
+                extracted_text.append(text)
+    return "\n\n".join(extracted_text)
+
+def load_document(file_path: str) -> str:
+    path = Path(file_path)
+    if path.suffix.lower() == ".html":
+        return parse_html(path)
+    elif path.suffix.lower() == ".pdf":
+        return parse_pdf(path)
+    else:
+        raise ValueError(f"Unsupported file format: {path.suffix}")
+```
+
+### 5.2 Pydantic Data Schema (`src/schema.py`)
+
+```
+from typing import Optional, List
+from pydantic import BaseModel, Field
+
+class RFPExtractionSchema(BaseModel):
+    bid_number: Optional[str] = Field(None, description="Bid or RFP identification number")
+    title: Optional[str] = Field(None, description="Title of the bid or project")
+    due_date: Optional[str] = Field(None, description="Submission deadline date and time")
+    bid_submission_type: Optional[str] = Field(None, description="Method of submission, e.g., online portal, sealed envelope")
+    term_of_bid: Optional[str] = Field(None, description="Contract duration or term length")
+    pre_bid_meeting: Optional[str] = Field(None, description="Details regarding pre-bid conferences or meetings")
+    installation: Optional[str] = Field(None, description="Installation requirements or specifications")
+    bid_bond_requirement: Optional[str] = Field(None, description="Bond percentage or requirements")
+    delivery_date: Optional[str] = Field(None, description="Expected delivery date or timeframe")
+    payment_terms: Optional[str] = Field(None, description="Payment schedule or terms (e.g., Net 30)")
+    additional_documentation_required: Optional[List[str]] = Field(default_factory=list, description="List of required certificates, forms, or licenses")
+    mfg_for_registration: Optional[str] = Field(None, description="Required manufacturer for registration")
+    contract_or_cooperative_to_use: Optional[str] = Field(None, description="Cooperative contract vehicle to use")
+    model_no: Optional[str] = Field(None, description="Specified product model numbers")
+    part_no: Optional[str] = Field(None, description="Specified product part or SKU numbers")
+    product: Optional[str] = Field(None, description="Primary product or commodity name")
+    contact_info: Optional[str] = Field(None, description="Contact details of procurement officer")
+    company_name: Optional[str] = Field(None, description="Name of the issuing organization/agency")
+    bid_summary: Optional[str] = Field(None, description="High-level summary of the bid requirement")
+    product_specification: Optional[str] = Field(None, description="Key technical specifications or performance requirements")
+```
+
+### 5.3 LLM Extraction Engine (`src/extractor.py`)
+
+```
+import json
+from openai import OpenAI
+from src.schema import RFPExtractionSchema
+
+def extract_rfp_data(document_text: str, client: OpenAI) -> dict:
+    """Invokes LLM with structured output constraints to extract RFP fields."""
+    system_prompt = (
+        "You are an expert procurement analysis assistant. Your task is to extract "
+        "accurate, factual information from the provided RFP document text according "
+        "to the given schema. If any field is not mentioned or cannot be determined, "
+        "leave it as null or empty. Do not invent information."
+    )
+
+    response = client.beta.chat.completions.parse(
+        model="gpt-4o-mini",
+        messages=[
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": f"Document Text:\n\n{document_text[:30000]}"}
+        ],
+        response_format=RFPExtractionSchema,
+    )
+
+    # Return as standard Python dictionary
+    return response.choices[0].message.parsed.model_dump()
+```
+
+### 5.4 Main Orchestrator (`main.py`)
+
+```
+import os
+import json
+from pathlib import Path
+from dotenv import load_dotenv
+from openai import OpenAI
+
+from src.parser import load_document
+from src.extractor import extract_rfp_data
+
+def process_rfp(input_file: str, output_file: str):
+    load_dotenv()
+    client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
+    print(f"[1/3] Parsing document: {input_file}...")
+    doc_text = load_document(input_file)
+
+    print(f"[2/3] Extracting structured data via LLM...")
+    extracted_data = extract_rfp_data(doc_text, client)
+
+    print(f"[3/3] Saving structured output to: {output_file}...")
+    Path(output_file).parent.mkdir(parents=True, exist_ok=True)
+    with open(output_file, "w", encoding="utf-8") as f:
+        json.dump(extracted_data, f, indent=2)
+
+    print("Extraction completed successfully!")
+
+if __name__ == "__main__":
+    # Example usage:
+    sample_input = "data/input/sample_bid.pdf"
+    sample_output = "data/output/sample_bid.json"
+    if Path(sample_input).exists():
+        process_rfp(sample_input, sample_output)
+    else:
+        print(f"Place an RFP document at '{sample_input}' to test.")
+```
+
+## 6. Deliverables Checklist
+
+Ensure your final submission contains:
+
+- [ ]  **Python Scripts / Notebook:** Fully functional extraction code (`main.py` or `.ipynb`).
+- [ ]  **`requirements.txt`:** All dependencies pinned with versions.
+- [ ]  **`README.md`:** Clear setup steps, virtual environment instructions, and execution commands.
+- [ ]  **Output JSON Files:** Structured JSON files for all provided test documents, matching the 20 target fields.

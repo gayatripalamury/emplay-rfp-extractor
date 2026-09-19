@@ -1,0 +1,38 @@
+{
+  "data": {
+    "bid_number": null,
+    "title": null,
+    "due_date": null,
+    "bid_submission_type": null,
+    "term_of_bid": null,
+    "pre_bid_meeting": null,
+    "installation": null,
+    "bid_bond_requirement": null,
+    "delivery_date": null,
+    "payment_terms": null,
+    "additional_documentation_required": [],
+    "mfg_for_registration": null,
+    "contract_or_cooperative_to_use": null,
+    "model_no": null,
+    "part_no": null,
+    "product": null,
+    "contact_info": null,
+    "company_name": null,
+    "bid_summary": null,
+    "product_specification": null
+  },
+  "sources": [
+    {
+      "source": "data\\input\\1c4fddb1-9abe-45ea-8823-1c4c4ca54287-Dell_Laptop_Specs.pdf",
+      "page": 1
+    },
+    {
+      "source": "data\\input\\1c4fddb1-9abe-45ea-8823-1c4c4ca54287-Dell_Laptop_Specs.pdf",
+      "page": 2
+    },
+    {
+      "source": "data\\input\\1c4fddb1-9abe-45ea-8823-1c4c4ca54287-Dell_Laptop_Specs.pdf",
+      "page": 3
+    }
+  ]
+}

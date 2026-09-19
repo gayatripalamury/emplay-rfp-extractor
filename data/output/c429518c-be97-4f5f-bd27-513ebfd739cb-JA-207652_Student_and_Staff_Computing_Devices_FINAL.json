@@ -1,0 +1,274 @@
+{
+  "data": {
+    "bid_number": "JA-207652",
+    "title": "Student and Staff Computing Devices",
+    "due_date": null,
+    "bid_submission_type": null,
+    "term_of_bid": null,
+    "pre_bid_meeting": null,
+    "installation": "White glove delivery and deployment services including asset decaling, asset reporting, etching, and delivery to varied locations",
+    "bid_bond_requirement": null,
+    "delivery_date": null,
+    "payment_terms": null,
+    "additional_documentation_required": [],
+    "mfg_for_registration": "OEM",
+    "contract_or_cooperative_to_use": null,
+    "model_no": null,
+    "part_no": null,
+    "product": "Student Chromebooks, Windows laptops, tablets, desktops, and monitors",
+    "contact_info": null,
+    "company_name": "Dallas Independent School District",
+    "bid_summary": "Dallas ISD seeks student and staff computing devices with delivery, deployment, warranty, and asset-management requirements.",
+    "product_specification": "Windows devices require Autopilot; Chromebooks require enrollment in Google Management. Laptop etching is required."
+  },
+  "sources": [
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 1
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 2
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 3
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 4
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 5
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 6
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 7
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 8
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 9
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 10
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 11
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 12
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 13
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 14
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 15
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 16
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 17
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 18
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 19
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 20
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 21
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 22
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 23
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 24
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 25
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 26
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 27
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 28
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 29
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 30
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 31
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 32
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 33
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 34
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 35
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 36
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 37
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 38
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 39
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 40
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 41
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 42
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 43
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 44
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 45
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 46
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 47
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 48
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 49
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 50
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 51
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 52
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 53
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 54
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 55
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 56
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 57
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 58
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 59
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 60
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 61
+    },
+    {
+      "source": "data\\input\\c429518c-be97-4f5f-bd27-513ebfd739cb-JA-207652 Student and Staff Computing Devices FINAL.pdf",
+      "page": 62
+    }
+  ]
+}

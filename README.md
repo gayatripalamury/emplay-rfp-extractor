@@ -1,4 +1,4 @@
-# Emplay RFP Intelligence Pipeline
+﻿# Emplay RFP Intelligence Pipeline
 
 **A production-minded document intelligence pipeline for extracting structured procurement data from RFP, bid, addendum, specification, affidavit, and bid-portal documents.**
 
